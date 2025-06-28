@@ -1,0 +1,20 @@
+{
+  "name": "loccon",
+  "version": "1.0.0",
+  "description": "Basic local context manager",
+  "keywords": [
+    "local",
+    "context"
+  ],
+  "license": "ISC",
+  "author": "JiaHui Yoong",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhyoong/loccon.git"
+  }
+}
