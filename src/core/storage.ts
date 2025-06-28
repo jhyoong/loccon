@@ -4,6 +4,7 @@ import { IndexManager } from './indexManager';
 import { ConfigManager } from './config';
 import { FileLock } from '../utils/filelock';
 import { Validator } from '../utils/validation';
+import Fuse from 'fuse.js';
 
 export class StorageManager {
   private storagePath: string;
@@ -50,7 +51,6 @@ export class StorageManager {
         }
       };
 
-      const entrySize = JSON.stringify({ [tag]: entry }).length;
       if (!(await this.shardManager.checkShardCapacity(currentShardId, JSON.stringify(entry)))) {
         currentShardId = await this.shardManager.createNewShard();
       }
@@ -177,7 +177,6 @@ export class StorageManager {
 
     if (useFuzzy) {
       // Use Fuse.js for fuzzy search
-      const Fuse = require('fuse.js');
       const options = {
         includeScore: true,
         keys: [

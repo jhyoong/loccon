@@ -1,3 +1,5 @@
+const packageJson = require('../../../package.json');
+
 export function handleError(error: unknown): void {
   if (error instanceof Error) {
     console.error(`Error: ${error.message}`);
@@ -9,7 +11,6 @@ export function handleError(error: unknown): void {
 
 export function getVersionString(): string {
   try {
-    const packageJson = require('../../../package.json');
     return packageJson.version;
   } catch {
     return '1.0.0';
