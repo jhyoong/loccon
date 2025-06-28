@@ -7,10 +7,10 @@ A simple **local context storage and management tool** with CLI and web interfac
 
 ## Features
 
-- **CLI Interface** - Fast command-line operations
-- **Web Interface** - Beautiful browser-based UI
+- **CLI Interface** - Fast(?) command-line operations
+- **Web Interface** - Simple browser-based UI
 - **Fuzzy Search** - Find contexts with partial matches
-- **Sharded Storage** - Efficient 5MB JSON file management
+- **Sharded Storage** - Simple JSON file management
 - **Categories** - Organize contexts with tags
 - **File Locking** - Safe concurrent access
 - **Cross-platform** - Works on macOS, Linux, and Windows
@@ -106,7 +106,7 @@ loccon web --storage-path ./project-contexts
 
 ## Storage Architecture
 
-Loccon uses a **sharded storage system** for optimal performance:
+Loccon uses a **sharded storage system** for (hopefully) optimal performance:
 
 ```
 .loccon/
