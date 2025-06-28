@@ -17,7 +17,7 @@ export function createAddCommand(): Command {
         const categories = options.categories ? parseCategories(options.categories) : [];
         
         await contextManager.add(tag, content, categories);
-        console.log(`✓ Added context '${tag}'`);
+        console.log(`Added context '${tag}'`);
       } catch (error) {
         console.error(`Error: ${error instanceof Error ? error.message : 'Unknown error'}`);
         process.exit(1);

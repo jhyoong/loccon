@@ -1,29 +1,61 @@
 {
   "name": "loccon",
   "version": "1.0.0",
-  "description": "Local context storage and management tool",
+  "description": "A simple local context storage and management tool with CLI and web interfaces. Store, search, and organize code snippets, notes, and development contexts with sharded JSON storage.",
   "keywords": [
     "context",
     "storage",
     "cli",
-    "web"
+    "web",
+    "notes",
+    "snippets",
+    "development",
+    "local",
+    "search",
+    "fuzzy",
+    "sharded",
+    "json"
   ],
-  "license": "ISC",
-  "author": "JiaHui Yoong",
+  "license": "MIT",
+  "author": {
+    "name": "JiaHui Yoong",
+    "email": "jh@yoong.dev",
+    "url": "https://github.com/jhyoong"
+  },
+  "homepage": "https://github.com/jhyoong/loccon#readme",
+  "bugs": {
+    "url": "https://github.com/jhyoong/loccon/issues"
+  },
   "type": "commonjs",
   "main": "dist/cli/index.js",
   "bin": {
     "loccon": "./bin/loccon.js"
   },
+  "files": [
+    "dist/",
+    "bin/",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/cli/index.js",
     "dev": "ts-node src/cli/index.ts",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "npm run build && npm test",
+    "prepack": "npm run build",
+    "postinstall": "echo '\nLoccon installed! Run \"loccon --help\" to get started.\n'"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jhyoong/loccon.git"
+    "url": "git+https://github.com/jhyoong/loccon.git"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "overrides": {
+    "glob": "^10.0.0"
   },
   "dependencies": {
     "commander": "^9.0.0",
@@ -34,9 +66,9 @@
   "devDependencies": {
     "@types/express": "^4.17.0",
     "@types/fs-extra": "^11.0.4",
-    "@types/jest": "^29.0.0",
+    "@types/jest": "^30.0.0",
     "@types/node": "^18.0.0",
-    "jest": "^29.0.0",
+    "jest": "^30.0.3",
     "ts-node": "^10.9.0",
     "typescript": "^5.0.0"
   }
