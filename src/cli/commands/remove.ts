@@ -42,7 +42,7 @@ export function createRemoveCommand(): Command {
 
         const removed = await contextManager.remove(tag);
         if (removed) {
-          console.log(`✓ Removed context '${tag}'`);
+          console.log(`Removed context '${tag}'`);
         } else {
           console.error(`Failed to remove context '${tag}'`);
           process.exit(1);
